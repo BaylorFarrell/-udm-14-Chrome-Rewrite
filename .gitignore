@@ -1,1 +1,6 @@
 .directory
+_metadata/
+archive/
+test/
+*.zip
+*.md
