@@ -1,7 +1,7 @@
 {
   "name": "&udm=14",
   "description": "Modifies Google Search URLs to include '&udm=14' when enabled.",
-  "version": "2.1",
+  "version": "2.2",
   "manifest_version": 3,
   "action": {
     "default_popup": "popup/popup.html",
