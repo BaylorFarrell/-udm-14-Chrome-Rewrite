@@ -8,3 +8,10 @@ chrome.runtime.onStartup.addListener(async () => {
     });
   }
 });
+
+chrome.runtime.onMessage.addListener((msg, sender, respond) => {
+  chrome.declarativeNetRequest
+    .getEnabledRulesets()
+    .then((ids) => respond(ids.includes("ruleset")));
+  return true;
+});
