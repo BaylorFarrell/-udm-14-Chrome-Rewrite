@@ -1,7 +1,7 @@
 {
   "name": "&udm=14",
   "description": "Adds Web, -ai, and AI-purging controls to Google Search for a cleaner, web-first results experience.",
-  "version": "2.4",
+  "version": "2.5",
   "manifest_version": 3,
   "action": {
     "default_popup": "popup/popup.html",
