@@ -1,7 +1,7 @@
 {
   "name": "&udm=14",
-  "description": "Adds Web, -ai, and AI-purging controls to Google Search for a cleaner, web-first results experience.",
-  "version": "2.5",
+  "description": "Opens Google searches in the Web tab, with optional -ai, AI-purging, and hide-All-tab controls for cleaner, web-first results.",
+  "version": "2.6",
   "manifest_version": 3,
   "action": {
     "default_popup": "popup/popup.html",
