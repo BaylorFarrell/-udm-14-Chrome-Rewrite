@@ -1,7 +1,7 @@
 {
   "name": "&udm=14",
   "description": "Opens Google searches in the Web tab, with optional -ai, AI-purging, and hide-All-tab controls for cleaner, web-first results.",
-  "version": "2.6",
+  "version": "2.7",
   "manifest_version": 3,
   "action": {
     "default_popup": "popup/popup.html",
