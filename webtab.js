@@ -25,13 +25,15 @@ function afterAll(item) {
   if (all && all.parentElement !== item) all.parentElement.after(item);
 }
 
+// Google's own Web link, visible one first: usually hidden under More, but shown in the strip
+// (after Shopping or last) where the strip has room, e.g. regions without a Shopping tab.
 function webLink() {
-  for (const a of document.querySelectorAll('a[href*="udm=web"]')) {
+  const all = [...document.querySelectorAll('a[href*="udm=web"]')].filter((a) => {
     try {
-      if (new URL(a.href).searchParams.get("udm") === "web") return a;
+      return new URL(a.href).searchParams.get("udm") === "web";
     } catch (e) {}
-  }
-  return null;
+  });
+  return all.find((a) => a.offsetParent) || all[0] || null;
 }
 
 function strip(el) {
@@ -54,7 +56,10 @@ function addWebTab() {
 
   if (!p.get("q") || document.querySelector("a[data-udm14]")) return true;
   const web = webLink();
-  if (web && web.offsetParent) return true;
+  if (web && web.offsetParent) {
+    if (web.parentElement.matches('[role="listitem"]')) afterAll(web.parentElement);
+    return true;
+  }
   if (!here.length) return false;
 
   const model = allLink() || here[0];
